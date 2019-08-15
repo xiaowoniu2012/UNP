@@ -7,9 +7,8 @@
 //
 
 #include <stdio.h>
-
+#include "lesson1_server.h"
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    server_lesson1(argc, NULL);
     return 0;
 }

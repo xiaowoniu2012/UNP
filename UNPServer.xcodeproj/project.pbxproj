@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A514D6F230564470035EC5E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A514D6E230564470035EC5E /* main.c */; };
+		2A514D99230567790035EC5E /* libunp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A514D98230567790035EC5E /* libunp.a */; };
+		2A514DA22305814C0035EC5E /* lesson1_server.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A514DA12305814C0035EC5E /* lesson1_server.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		2A514D6B230564470035EC5E /* UNPServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UNPServer; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A514D6E230564470035EC5E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		2A514D98230567790035EC5E /* libunp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunp.a; path = ../libs/libunp.a; sourceTree = "<group>"; };
+		2A514DA02305814C0035EC5E /* lesson1_server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lesson1_server.h; sourceTree = "<group>"; };
+		2A514DA12305814C0035EC5E /* lesson1_server.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lesson1_server.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A514D99230567790035EC5E /* libunp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +49,7 @@
 			children = (
 				2A514D6D230564470035EC5E /* UNPServer */,
 				2A514D6C230564470035EC5E /* Products */,
+				2A514D97230567780035EC5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +65,18 @@
 			isa = PBXGroup;
 			children = (
 				2A514D6E230564470035EC5E /* main.c */,
+				2A514DA02305814C0035EC5E /* lesson1_server.h */,
+				2A514DA12305814C0035EC5E /* lesson1_server.c */,
 			);
 			path = UNPServer;
+			sourceTree = "<group>";
+		};
+		2A514D97230567780035EC5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A514D98230567790035EC5E /* libunp.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A514DA22305814C0035EC5E /* lesson1_server.c in Sources */,
 				2A514D6F230564470035EC5E /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +259,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KL99CD99DM;
+				HEADER_SEARCH_PATHS = /Users/smart/Documents/final/UNPLessons/libs;
+				LIBRARY_SEARCH_PATHS = /Users/smart/Documents/final/UNPLessons/libs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,6 +270,8 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KL99CD99DM;
+				HEADER_SEARCH_PATHS = /Users/smart/Documents/final/UNPLessons/libs;
+				LIBRARY_SEARCH_PATHS = /Users/smart/Documents/final/UNPLessons/libs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
