@@ -45,6 +45,9 @@
 		2A514D88230566B90035EC5E /* UNPClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UNPClient.xcodeproj; path = ../UNPClient/UNPClient.xcodeproj; sourceTree = "<group>"; };
 		2A514D8E230566C10035EC5E /* UNPServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UNPServer.xcodeproj; path = ../UNPServer/UNPServer.xcodeproj; sourceTree = "<group>"; };
 		2A514D952305670E0035EC5E /* libunp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunp.a; path = ../libs/libunp.a; sourceTree = "<group>"; };
+		2A514DA6230647C40035EC5E /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		2A514DA7230647C40035EC5E /* libunp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libunp.a; sourceTree = "<group>"; };
+		2A514DA8230647C40035EC5E /* unp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 		2A514D75230566560035EC5E = {
 			isa = PBXGroup;
 			children = (
+				2A514DA5230647C40035EC5E /* libs */,
 				2A514D8E230566C10035EC5E /* UNPServer.xcodeproj */,
 				2A514D88230566B90035EC5E /* UNPClient.xcodeproj */,
 				2A514D80230566560035EC5E /* UNPLesson */,
@@ -107,6 +111,17 @@
 				2A514D952305670E0035EC5E /* libunp.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A514DA5230647C40035EC5E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				2A514DA6230647C40035EC5E /* config.h */,
+				2A514DA7230647C40035EC5E /* libunp.a */,
+				2A514DA8230647C40035EC5E /* unp.h */,
+			);
+			name = libs;
+			path = ../libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

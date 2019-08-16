@@ -36,7 +36,9 @@ int client_lesson1(int argc, char **argv) {
     
     
     err_msg("read socket");
+    static int count = 0;
     while ((readlength = read(sockfd, recvline, MAXLINE)) > 0) {
+        ++count;
         recvline[readlength] = 0;
         
         if (fputs(recvline, stdout) == EOF) {
@@ -44,6 +46,7 @@ int client_lesson1(int argc, char **argv) {
         }
     }
     
+    printf("read count is %d \n",count);
     err_msg("read done.");
     if (readlength <=0) {
         err_sys("read data from server error");
