@@ -24,11 +24,34 @@ int client_lesson1(int argc, char **argv) {
     
     // char address to net address
     
-    Inet_pton(AF_INET, "127.0.0.1", &server_addr.sin_addr);
+    Inet_pton(AF_INET, "172.24.80.21", &server_addr.sin_addr);
+    
+//    inet_aton("172.24.80.21", &server_addr.sin_addr);
     
     // conect to server
     
+    
     err_msg("connet socket");
+    
+    /*
+     // Error checking omitted for expository purposes
+     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+     
+     // Bind to a specific network interface (and optionally a specific local port)
+     struct sockaddr_in localaddr;
+     localaddr.sin_family = AF_INET;
+     localaddr.sin_addr.s_addr = inet_addr("192.168.1.100");
+     localaddr.sin_port = 0;  // Any local port will do
+     bind(sockfd, (struct sockaddr *)&localaddr, sizeof(localaddr));
+     
+     // Connect to the remote server
+     struct sockaddr_in remoteaddr;
+     remoteaddr.sin_family = AF_INET;
+     remoteaddr.sin_addr.s_addr = inet_addr(server_ip);
+     remoteaddr.sin_port = htons(server_port);
+     connect(sockfd, (struct sockaddr *)&remoteaddr, sizeof(remoteaddr));
+     */
+    
     
     Connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
     
@@ -54,7 +77,21 @@ int client_lesson1(int argc, char **argv) {
     
     exit(0);
     
-    
-    
+}
+
+void client_test() {
+    int ip;
+    char *host = "127.0.0.1";
+    // presention to number : char *host to int ip
+    if (inet_pton(AF_INET, host, &ip) == 1) {
+        err_msg("ip is %d",ip);
+    }
+    // number to presention : int ip to char *host
+    char address[INET_ADDRSTRLEN];
+//  INET_ADDRSTRLEN 16 ipv4 len
+//  INET6_ADDRSTRLEN 46 ipv6 len
+    if (inet_ntop(AF_INET, &ip, address, INET_ADDRSTRLEN) != NULL) {
+        err_msg("address is %s",address);
+    }
     
 }

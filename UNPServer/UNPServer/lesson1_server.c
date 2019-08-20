@@ -12,7 +12,8 @@
 
 int server_lesson1(int argc,char **argv) {
     int listenfd, connfd;
-    struct sockaddr_in servaddr;
+    struct sockaddr_in servaddr,client_addr;
+    socklen_t clinet_addr_len = sizeof(client_addr);
     char buffer[MAXLINE];
     time_t ticks;
     
@@ -26,10 +27,23 @@ int server_lesson1(int argc,char **argv) {
     
     Bind(listenfd, (SA *)&servaddr, sizeof(servaddr));
     
+    
+    //socket status: closed -> listen
     Listen(listenfd, LISTENQ);
     
     while (1) {
-        connfd = accept(listenfd, NULL , NULL);
+        
+        err_msg("server: accepting... \n");
+        
+        connfd = accept(listenfd, (SA *)&client_addr , &clinet_addr_len);
+        
+        err_msg("server: accepted \n");
+        
+//        char *present = inet_ntoa(client_addr.sin_addr);
+        //print connected socket
+        char connect_ip[16];
+        Inet_ntop(AF_INET, &(client_addr.sin_addr), connect_ip, 16);
+        printf("connect from ip: %s port: %d \n",connect_ip, ntohs(client_addr.sin_port));
         
         ticks = time(NULL);
         

@@ -12,6 +12,7 @@
 int main(int argc, const char * argv[]) {
     
     client_lesson1(argc, NULL);
+//    client_test();
     
     return 0;
 }

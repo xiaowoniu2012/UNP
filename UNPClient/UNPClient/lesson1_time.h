@@ -11,4 +11,5 @@
 
 #include <stdio.h>
 int client_lesson1(int argc, char **argv);
+void client_test();
 #endif /* lesson1_time_h */
